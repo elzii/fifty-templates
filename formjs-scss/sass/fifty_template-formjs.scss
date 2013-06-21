@@ -1,0 +1,241 @@
+/* fifty_template-formjs.scss */
+
+/* Table of Contents
+    
+    # DONATION              (.donately-fields)
+        - AMOUNT            (.donately-donation-amount)
+        - FREQUENCY         (.donately-donation-frequency)
+    # CC / SECURE INFO      (.donately-secure-fields)
+        - CC EADER          (.donately-secure-header)
+        - CC NUMBER         (.donately-fields)
+        - CC ADDITIONAL     (.donately-fields)
+    # LOGGED IN             (.donately-logged-in-fields)                         [HIDDEN]
+    # LOGGED OUT > NAME     (.donately-logged-out-fields .donately-name-fields)     
+    # LOGGED OUT > EMAIL    (.donately-logged-out-fields .donately-email-fields)    
+    # SUBMIT                (.donately-action-fields)
+    # THANK YOU NO-ACCOUNT  (.donately-thank-you-no-account)                     [HIDDEN]
+    # THANK YOU HAS-ACCOUNT (.donately-thank-you-has-account)                    [HIDDEN]
+    # ERROR MESSAGE         (.donately-error-message-overlay)                    [HIDDEN]
+
+*/
+
+
+/*  ============================================================ */
+/*                          DONATELY FORM                        */
+/*  ============================================================ */
+
+.donately-donation-form {
+
+    /* INPUT DEFAULTS & CLASSES
+    ================================================== */
+    
+    /* INPUTS (all) */
+    input, textarea, select {
+
+    }
+    
+    /* INPUT (text variety) */
+    input[type="text"], input[type="email"], input[type="phone"] {
+
+    }
+    .donately-text-input {}
+    
+    /* RADIO */
+    input[type="radio"] {
+
+    }
+    .donately-radio-option {
+
+        &:last-child {
+            input {}
+            label {}
+        }
+    }
+
+    /* LABELS */
+    label {
+        
+    }
+    .donately-label {}
+    .donately-dollar-sign {}
+    
+    /* SELECT */
+    select {
+
+    }
+
+    /* TEXTAREA */
+    textarea {
+
+    }
+
+    /* BUTTON[disabled] */
+    button[disabled] {
+
+    }
+    .donately-btn {
+
+        &:hover {}
+    }
+
+
+    /* FIELDSETS / WRAPS
+    ================================================== */
+    .donately-fields {
+
+    }
+
+    /* DONATION AMT/FREQ
+    ================================================== */
+    .donately-donation-amount {
+
+        input#donately-amount {}
+    }
+    .donately-donation-frequency {
+        
+        .donately-radio-option {}
+        input#donately-one-time-donation {}
+        input#donately-recurring-donation {}
+    }
+        
+    
+    /* SECURE FIELDS (CC)
+    ================================================== */
+    .donately-secure-fields {
+
+        .donately-fields {}
+        
+        /* SECURE HEADER */
+        .donately-secure-header {
+
+            span {
+                background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAkAAAAMCAYAAACwXJejAAAAIUlEQVQY02NonjybAYr/Y8FgOXQFDFg0UVnRf0J4VNF/AGtWD2MTxoZrAAAAAElFTkSuQmCC);
+                background-repeat: no-repeat;
+                background-position: 0 0;
+            }
+        }
+        /* CARD NUMBER */
+        .donately-card-number-label {}
+
+        input#donately-card-number {
+
+            &.donately-cc-visa          {background-image:url(https://www.dntly.com/assets/js/v1/form/cc/visa.png);}
+            &.donately-cc-mastercard    {background-image:url(https://www.dntly.com/assets/js/v1/form/cc/mastercard.png);}
+            &.donately-cc-amex          {background-image:url(https://www.dntly.com/assets/js/v1/form/cc/amex.png);}
+            &.donately-cc-discover      {background-image:url(https://www.dntly.com/assets/js/v1/form/cc/discover.png);}
+        }
+        .donately-card-number-inline-error {}
+
+        /* CARD DETAILS */
+        .donately-expiration-date   {
+            
+            label {}
+            .donately-text-input {}
+
+            #donately-card-exp-month    {}
+            #donately-card-cvc          {}
+        }
+
+        .donately-verification-number {
+
+            .donately-input-text {}
+            span {}
+        }
+    }
+    
+
+    /* LOGGED-IN / LOGGED-OUT
+    ================================================== */
+
+        // LOGGED-IN (hidden default)
+        .donately-logged-in-fields {
+            
+            .donately-logged-in-message {
+
+                strong.donately-email-when-logged-in {
+
+                }
+                a.donately-log-out {}
+            }
+        }
+        // LOGGED OUT (name / email)
+        .donately-logged-out-fields {}
+        .donately-name-fields {
+
+            .donately-first-name-group, .donately-last-name-group {
+
+                label.donately-label {
+
+                }
+                input.donately-text-input {
+
+                }
+            }
+            input#donately-first-name {}
+            input#donately-last-name  {}
+        }
+
+    
+    /* FORM SUBMIT
+    ================================================== */
+    .donately-action-fields {
+        input.donatley-btn.donately-submit {
+
+        }
+        .donately-loading {}    // (hidden default)
+    }
+
+
+    /* THANK-YOU
+    ================================================== */
+        
+        // NO ACCOUNT & HAS ACCOUNT (hidden default)
+        .donately-thank-you-no-account,.donately-thank-you-has-account {
+            h2 {}
+            p  {}
+        }
+        // NO ACCOUNT   (hidden default)
+        .donately-thank-you-no-account {
+
+        }
+        // HAS ACCOUNT  (hidden default)
+        .donately-thank-you-has-account {
+
+        }
+
+
+
+    /* ERROR/VALIDATION
+    ================================================== */
+    .donately-inline-error {
+    
+    }
+    .donately-amount-inline-error {
+
+    }
+    .donately-error-message-overlay {
+
+        .donately-error-message {
+            
+        }
+    }
+
+
+    /* HELPERS / DEFAULTS
+    ================================================================ */
+    .box-sizing {
+        -webkit-box-sizing:border-box;
+           -moz-box-sizing:border-box;
+                box-sizing:border-box;
+    }
+    button::-moz-focus-inner,input::-moz-focus-inner; {
+        border:0;padding:0;
+    }
+    a {
+
+        &:focus     {}
+        &:active    {}
+        &:hover     {}
+    }
+
+}
